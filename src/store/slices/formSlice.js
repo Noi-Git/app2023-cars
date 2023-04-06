@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { addCar } from './carsSlice' // addCar = action creator
 
 const formSlice = createSlice({
   name: 'form',
@@ -14,6 +15,13 @@ const formSlice = createSlice({
     changeCost(state, action) {
       state.cost = action.payload
     },
+  },
+  extraReducers(builder) {
+    //addCar is the same as 'cars/addCar' -- we are saying that we are going to watch for addCar action type
+    builder.addCase(addCar, (state, action) => {
+      state.name = ''
+      state.cost = 0
+    })
   },
 })
 

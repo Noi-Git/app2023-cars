@@ -29,6 +29,7 @@ const CarForm = () => {
         cost,
       })
     )
+    return
   }
 
   return (

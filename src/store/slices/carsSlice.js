@@ -12,7 +12,7 @@ const carsSlice = createSlice({
     },
 
     addCar(state, action) {
-      state.cars.push({
+      state.data.push({
         // Assumption: action.payload === {name: 'ab', cost: 140} --- from formSlice
         name: action.payload.name, // manually reach out to the name from formSlice
         cost: action.payload.cost,
@@ -22,10 +22,10 @@ const carsSlice = createSlice({
 
     removeCar(state, action) {
       // Assumption: action.payload === the id of the car we want to remove
-      const updated = state.cars.filter((car) => {
+      const updated = state.data.filter((car) => {
         return car.id !== action.payload
       })
-      state.cars = updated
+      state.data = updated
     },
   },
 })

@@ -4,7 +4,7 @@ const CarList = () => {
   const cars = useSelector((state) => {
     // console.log('state.cars', state.cars)
     // console.log('state.cars.cars', state.cars.cars)
-    return state.cars.cars
+    return state.cars.data
   })
   console.log(cars)
 

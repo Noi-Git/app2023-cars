@@ -3,9 +3,13 @@ import { removeCar } from '../store'
 
 const CarList = () => {
   const dispatch = useDispatch()
-  const cars = useSelector((state) => {
-    // console.log('state.cars.cars', state.cars.cars)
-    return state.cars.data
+
+  const cars = useSelector(({ cars: { data, searchTerm } }) => {
+    // destructured data out of state
+
+    //filtered cars
+
+    return data
   })
   console.log(cars)
 

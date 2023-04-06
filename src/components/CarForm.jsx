@@ -4,8 +4,10 @@ import { changeName, changeCost } from '../store'
 
 const CarForm = () => {
   const dispatch = useDispatch()
+
+  // modify useSlector to return object when we want to get access to more than one value in the state
   const name = useSelector((state) => {
-    return state.form.name
+    return { name: state.form.name, cost: state.form.cost }
   })
 
   const handleNameChange = (event) => {

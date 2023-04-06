@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeName, changeCost } from '../store'
+import { changeName, changeCost, addCar } from '../store'
 
 const CarForm = () => {
   const dispatch = useDispatch()
@@ -20,7 +20,9 @@ const CarForm = () => {
     dispatch(changeCost(carCost))
   }
 
-  const handleSubmit = () => {}
+  const handleSubmit = (event) => {
+    event.preventDefault()
+  }
 
   return (
     <div className='car-form panel'>

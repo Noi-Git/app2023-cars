@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeName } from '../store'
+import { changeName, changeCost } from '../store'
 
 const CarForm = () => {
   const dispatch = useDispatch()
@@ -10,6 +10,10 @@ const CarForm = () => {
 
   const handleNameChange = (event) => {
     dispatch(changeName(event.target.value))
+  }
+
+  const handleCostChange = (event) => {
+    dispatch(changeCost(event.target.value))
   }
 
   return (
@@ -26,6 +30,15 @@ const CarForm = () => {
               // we need to access store - reach out to current name piece of state
               value={name}
               onChange={handleNameChange}
+            />
+          </div>
+          <div className='field'>
+            <label className='label'>Cost</label>
+            <input
+              type='number'
+              className='input is-expanded'
+              value={cost}
+              onChange={handleCostChange}
             />
           </div>
         </div>

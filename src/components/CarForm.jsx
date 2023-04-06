@@ -24,7 +24,7 @@ const CarForm = () => {
               className='input is-expanded'
               // === is suppose to be name state coming out of redux store
               // we need to access store - reach out to current name piece of state
-              // value={name}
+              value={name}
               onChange={handleNameChange}
             />
           </div>

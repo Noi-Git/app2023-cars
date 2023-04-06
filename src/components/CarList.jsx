@@ -1,13 +1,17 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeCar } from '../store'
 
 const CarList = () => {
+  const dispatch = useDispatch()
   const cars = useSelector((state) => {
     // console.log('state.cars.cars', state.cars.cars)
     return state.cars.data
   })
   console.log(cars)
 
-  const handleCarDelete = () => {}
+  const handleCarDelete = (car) => {
+    dispatch(removeCar(car.id))
+  }
 
   const renderedCars = cars.map((car) => {
     return (

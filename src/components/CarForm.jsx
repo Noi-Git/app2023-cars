@@ -1,7 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { changeName } from '../store'
 
 const CarForm = () => {
-  const handleNameChange = () => {}
+  const dispatch = useDispatch()
+  const handleNameChange = (event) => {
+    dispatch(changeName(event.target.value))
+  }
 
   return (
     <div className='car-form panel'>

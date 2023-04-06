@@ -4,7 +4,7 @@ const carsSlice = createSlice({
   name: 'cars',
   initialState: {
     searchTerm: '',
-    cars: [],
+    data: [], // change the key to data -- to prevent confusion when access it in the component using useSelector()
   },
   reducers: {
     changeSearchTerm(state, action) {

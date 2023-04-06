@@ -1,6 +1,13 @@
-import React from 'react'
+import { useSelector } from 'react-redux'
 
 const CarList = () => {
+  const cars = useSelector((state) => {
+    // console.log('state.cars', state.cars)
+    // console.log('state.cars.cars', state.cars.cars)
+    return state.cars.cars
+  })
+  console.log(cars)
+
   return <div>CarList</div>
 }
 

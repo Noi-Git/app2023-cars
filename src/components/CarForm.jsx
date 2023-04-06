@@ -1,9 +1,13 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { changeName } from '../store'
 
 const CarForm = () => {
   const dispatch = useDispatch()
+  const name = useSelector((state) => {
+    return state.form.name
+  })
+
   const handleNameChange = (event) => {
     dispatch(changeName(event.target.value))
   }

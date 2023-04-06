@@ -48,6 +48,9 @@ const CarForm = () => {
             />
           </div>
         </div>
+        <div className='field'>
+          <button className='button is-link'>Submit</button>
+        </div>
       </form>
     </div>
   )

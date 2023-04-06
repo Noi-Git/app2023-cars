@@ -41,7 +41,7 @@ const CarForm = () => {
             <input
               type='number'
               className='input is-expanded'
-              value={cost}
+              value={cost || ''}
               onChange={handleCostChange}
             />
           </div>

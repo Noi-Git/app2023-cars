@@ -5,7 +5,7 @@ const CarSearch = () => {
   const dispatch = useDispatch()
 
   const searchTerm = useSelector((state) => {
-    // state.searchTerm
+    return state.cars.searchTerm
   })
 
   const handleSearchTermChange = (event) => {

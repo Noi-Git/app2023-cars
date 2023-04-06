@@ -13,3 +13,7 @@ const store = configureStore({
     form: formReducer,
   },
 })
+
+// export store and all action creaters to use in other components
+// so we don't need to import directly from the slice themselves
+export { store, changeName, changeCost, addCar, removeCar, changeSearchTerm }

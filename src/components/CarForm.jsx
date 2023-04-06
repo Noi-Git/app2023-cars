@@ -20,10 +20,12 @@ const CarForm = () => {
     dispatch(changeCost(carCost))
   }
 
+  const handleSubmit = () => {}
+
   return (
     <div className='car-form panel'>
       <h4 className='subtitle is-3'>Add Car</h4>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className='field-group'>
           <div className='field'>
             <label className='label'>Name</label>

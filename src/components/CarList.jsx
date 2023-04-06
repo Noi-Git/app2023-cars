@@ -8,8 +8,9 @@ const CarList = () => {
     // destructured data out of state
 
     //filtered cars
-
-    return data
+    return data.filter((car) =>
+      car.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
   })
   console.log(cars)
 

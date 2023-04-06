@@ -22,6 +22,13 @@ const CarForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    // console.log(addCar({ name, cost }))
+    dispatch(
+      addCar({
+        name,
+        cost,
+      })
+    )
   }
 
   return (

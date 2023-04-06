@@ -13,7 +13,9 @@ const CarForm = () => {
   }
 
   const handleCostChange = (event) => {
-    dispatch(changeCost(event.target.value))
+    // || 0 is to prevent NaN --- when user put the invalid number
+    const carCost = parseInt(event.target.value) || 0
+    dispatch(changeCost(carCost))
   }
 
   return (

@@ -4,13 +4,15 @@ import { removeCar } from '../store'
 const CarList = () => {
   const dispatch = useDispatch()
 
-  const cars = useSelector(({ cars: { data, searchTerm } }) => {
-    // destructured data out of state
-
-    //filtered cars
-    return data.filter((car) =>
+  const { cars, name } = useSelector(({ form, cars: { data, searchTerm } }) => {
+    // we are going to do matching update here
+    const filteredCars = data.filter((car) =>
       car.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
+    return {
+      cars: filteredCars,
+      name: form.name,
+    }
   })
   console.log(cars)
 
@@ -19,6 +21,8 @@ const CarList = () => {
   }
 
   const renderedCars = cars.map((car) => {
+    // the matching cars will be bold when we rendered the car
+    // we need to know the car's name -- and the current name user is typing -- state.form.name
     return (
       <div key={car.id} className='panel'>
         <p>
